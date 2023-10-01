@@ -4,10 +4,13 @@
 const express= require("express") ()
 const port = 5000;
 
+//set the viewengine to ejs -> setting the view engine to 'ejs' telling Express.js that when we render views or templates (e.g., when using res.render()), it should use the EJS templating engine to process and render those templates. 
+express.set('view engine','ejs');
 
 
+//Get API - defining the route for '/'
 express.get('/',(req,res)=>{
-    res.send("hello world");
+    res.render("home");
 })
 
 
