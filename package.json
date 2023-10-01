@@ -1,0 +1,19 @@
+{
+  "name": "personal-finance-tracker",
+  "version": "1.0.0",
+  "description": "Personal Finance Tracker - NodeJS\" is a comprehensive financial management application built with NodeJS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/turttlehouse/Personal-Finance-Tracker-NodeJS.git"
+  },
+  "author": "Bishal Jimee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/turttlehouse/Personal-Finance-Tracker-NodeJS/issues"
+  },
+  "homepage": "https://github.com/turttlehouse/Personal-Finance-Tracker-NodeJS#readme"
+}
