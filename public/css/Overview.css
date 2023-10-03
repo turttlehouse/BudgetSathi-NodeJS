@@ -68,3 +68,157 @@ body{
     margin: 0 auto;  /* left side ma space create hunxa */
 }
 
+h2.header{
+  color: var(--clr-primary-variant);
+}
+
+a{
+    color: var(--clr-dark);
+}
+
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2{
+    font-size: 1.4rem;
+
+}
+
+h3{
+    font-size: 0.87rem;
+}
+
+h4{
+    font-size: 0.8rem;
+}
+
+h5{
+    font-size: 0.77rem;
+}
+small{
+    font-size: 0.75rem;
+}
+.profile-photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.text-muted{
+    color: var(--clr-info-dark);
+}
+p{
+    color : var(--clr-dark-variant);
+}
+b{
+    color : var(--clr-dark);
+}
+.primary{
+    color:var(--clr-primary);
+}
+.success{
+    color:var(--clr-success);
+}
+.danger{
+    color:var(--clr-danger);
+}
+
+.warning{
+    color:var(--clr-warnig);
+}
+
+  /* aside */
+
+  aside{
+    height: 100vh;
+  }
+
+  aside .top{
+    background-color: var(--clr-white);
+    display: flex;
+    justify-content: space-around;  /* moving the CBABAR to the right */
+    align-items: center;
+    margin-top:1.4rem;  /*from the top some white space is created */
+  }
+
+  aside .logo{
+    display: flex;
+    gap: 1rem;
+  }
+
+  aside .top div.close{
+    display: none;       /* close icon disappear */
+  }
+
+  /* ********
+  sidebar
+  ********** */
+
+  aside .sidebar{
+    background-color: var(--clr-white);
+    display: flex;
+    flex-direction: column;
+    height: 85vh;    /* increasing height of sidebar */
+    position: relative;
+    top:1rem;   /* gap will be created between the cBabar and sidebar */
+
+  }
+
+  aside .h3{
+    font-weight: 400;
+  }
+ aside .sidebar a{
+    display: flex;
+    color: var(--clr-info-dark);
+    margin-left: 2rem;   /* Bringing list of sidebar to left side */
+    gap:1rem;   /* space between the icon and the list items name */
+    align-items: center;
+    height:3.2rem;  /* vertical gap between the list items */
+    transition: all .1s ease-in;
+ }
+
+ aside .sidebar a span{
+  font-size: 1.6rem;     /* increasing the size of icons */
+  transition: all .1s ease-in;
+ }
+
+ aside .sidebar a:last-child{
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+
+ }
+
+ aside .sidebar a.active{
+  background: var(--clr-light);
+  color:var(--clr-primary);      /*color of font i.e text inside sidebar inside active clas*/
+  margin-left: 0;
+  border-left: 5px solid var(--clr-primary);  /*blue colour vertical stick will appear on the left side */
+ }
+
+ aside .sidebar a.active::before{
+  content: '';
+  width: 6px;
+  height: 100%;
+  background-color: var(--clr-primary);
+
+ }
+
+ aside .sidebar a:hover{
+  color: var(--clr-primary);
+ }
+
+ aside .sidebar a:hover span{
+  margin-left: 1rem;   /* left tira list item shift hunxa hover garepaxi */
+  transition: .4s ease;
+}
+
+aside .sidebar a span.msg_count{
+  background: var(--clr-danger);
+  color: var(--clr-white);
+  padding: 2px 5px;
+  font-size: 11px;
+  border-radius: var(--border-radius-1);
+}
