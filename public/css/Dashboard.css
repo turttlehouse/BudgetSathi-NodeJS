@@ -3,6 +3,7 @@
 /* variables *
 /* suppose I used 1 variable in 10 places and if i want to change color of the text of 10 places then i don't need to change the color of the text at 10 places each time instead i can simply change on the variable and the changes will be reflected in all of the  text at 10 places */
 :root {
+    --clr-new:yellow;
     --clr-primary: #7380ec;
     --clr-danger: #ff7782;
     --clr-success: #41f1b6;
@@ -10,7 +11,7 @@
     --clr-info-dark: #7d8da1;
     --clr-info-light: #dce1eb;
     --clr-dark: #363949;
-    --clr-warnig: #ff4edc;
+    --clr-warning: #ff4edc;
     --clr-light: rgba(132, 139, 200, 0.18);
     --clr-primary-variant: #111e88;
     --clr-dark-variant: #677483;
@@ -222,3 +223,139 @@ aside .sidebar a span.msg_count{
   font-size: 11px;
   border-radius: var(--border-radius-1);
 }
+
+
+/********
+Styling the Main section
+*********/
+
+main{
+  margin-top: 1rem;
+  width: auto;
+}
+
+main input{
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  color: var(--clr-dark);
+}
+
+main .date{
+  display: inline-block;
+  background-color: var(--clr-white);
+  border-radius: var(--border-radius-1);
+  margin-top: 1rem;  /*vertical gap between the Dashboard text and date */
+  padding: 0.5rem 1.6rem;
+}
+
+main .insights{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:1.6rem; /*horizontal gap between the income,expense and net balance */
+}
+
+main .insights>div{
+  background-color: var(--clr-white);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius); /*card radius */
+  margin-top: 1rem;  /* vertical gap between the date and insights */
+  box-shadow: var(--box-shadow);  /*casting shadow to make it look attractive */
+  transition: all .3s ease;
+}
+
+main .insights > div:hover{
+  box-shadow: none ;
+}
+
+main .insights > div span {
+  background:  coral;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color :var(--clr-white); /*icon color jun hamile span vitra haleko xum */
+  font-size: 2rem;
+}
+
+main .insights >div.expenses span{
+  background-color: var(--clr-danger);
+}
+
+main .insights >div.balance span{
+  background-color: var(--clr-success);
+}
+
+main .insights> div .middle {
+  display: flex;
+  align-items: center;  /*bringing the item inside the income at center */
+}
+
+main h1{
+  color: var(--clr-dark);
+}
+
+main .insights h1{
+  color :var(--clr-dark);
+}
+
+main .insights h3{
+  color: var(--clr-dark);
+}
+
+main .insights p{
+  color: var(--clr-dark);
+}
+
+main .insights .progress{
+  position: relative;
+  height: 68px;
+  width: 60px;
+  border-radius: 50px;
+}
+
+main .insights svg{
+  height: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0;
+}
+
+main .insights svg circle{
+  fill: none;  /*removing color of circle */
+  stroke: var(--clr-primary); /*filing boundary color of circle */
+  transform: rotate(270,80,80);
+  stroke-width: 5; /*bondary width of circle increased */
+}
+
+main .insights .incomes svg circle{
+  stroke-dashoffset: 10;  
+  stroke-dasharray: 150; /*half circle will appear */
+  stroke: var(--clr-primary);
+
+}
+
+main .insights .expenses svg circle{
+  stroke-dashoffset: 0;  
+  stroke-dasharray: 150; /*half circle will appear */
+}
+
+main .insights .balance svg circle{
+  stroke-dashoffset: 0;  
+  stroke-dasharray: 150; /*half circle will appear */
+  stroke: var(--clr-success);
+
+}
+
+main .insights .progress .number{
+  position: absolute;
+  top: 5%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+ 
+
+
+

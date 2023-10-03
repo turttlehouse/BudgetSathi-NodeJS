@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Finance Tracker Dashboard</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="css/Overview.css">
+    <link rel="stylesheet" href="css/Dashboard.css">
 </head>
 <body>
     <div class="container">
@@ -96,7 +96,104 @@
 
         <!-- main section start here -->
         <main>
-            <h1>Main</h1>
+            <h1>Dashboard</h1>
+
+            <div class="date">
+                <input type="date">
+            </div>
+
+            <div class="insights">
+
+
+                <!--start incomes-->
+                <div class="incomes">
+                    <span class="material-symbols-outlined">trending_up</span>
+                    <div class="middle">
+
+                        <div class="left">
+                            <h3>Total Incomes</h3>
+                            <h1>Rs.30,000/-</h1>
+                        </div>
+
+                        <div class="progress">
+                            <svg> <!-- svg ko use le hamile afno hisab le circle create garna sakxam -->
+                                <circle r="30" cy="40" cx="40"></circle>
+                            </svg>
+                            <div class="number">
+                                80%
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <small>Last 30 days </small>    
+                </div>
+
+
+                <!--end incomes-->
+
+                  <!--start expenses-->
+                  <div class="expenses">
+                    <span class="material-symbols-outlined">earthquake</span>
+                    <div class="middle">
+
+                        <div class="left">
+                            <h3>Total Expenses</h3>
+                            <h1>Rs.18,000/-</h1>
+                        </div>
+
+                        <div class="progress">
+                            <svg> <!-- svg ko use le hamile afno hisab le circle create garna sakxam -->
+                                <circle r="30" cy="40" cx="40"></circle>
+                            </svg>
+                            <div class="number">
+                                40%
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <small>Last 30 days </small>    
+                </div>
+
+
+                <!--end expenses-->
+
+
+                  <!--start balance-->
+                  <div class="balance">
+                    <span class="material-symbols-outlined">account_balance</span>
+                    <div class="middle">
+
+                        <div class="left">
+                            <h3>Net Balance</h3>
+                            <h1>Rs.12,000/-</h1>
+                        </div>
+
+                        <div class="progress">
+                            <svg> <!-- svg ko use le hamile afno hisab le circle create garna sakxam -->
+                                <circle r="30" cy="40" cx="40"></circle>
+                            </svg>
+                            <div class="number">
+                                20%
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <small>Last 30 days </small>    
+                </div>
+
+
+                <!--end balance-->
+
+            </div>
+
+            <!-- Ending insights -->
+
+
+
+
         </main>
 
         <!-- main section end here -->

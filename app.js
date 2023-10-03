@@ -16,7 +16,7 @@ app.use(express.static("public/"))
 //Get API - defining the route for '/'
 app.get('/',(req,res)=>{
     //rendering the home.ejs file inside views folder
-    res.render("Overview");
+    res.render("Dashboard");
 })
 
 
