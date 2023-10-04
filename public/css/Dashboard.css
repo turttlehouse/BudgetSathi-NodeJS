@@ -65,7 +65,7 @@ body{
     display: grid;
     width: 96%;
     gap:1.8rem;
-    grid-template-columns: 14rem auto 14rem;
+    grid-template-columns: 12rem auto 20rem;
     margin: 0 auto;  /* left side ma space create hunxa */
 }
 
@@ -77,27 +77,11 @@ a{
     color: var(--clr-dark);
 }
 
-h1{
-    font-weight: 800;
-    font-size: 1.8rem;
-}
-
-h2{
-    font-size: 1.4rem;
-
-}
 
 h3{
     font-size: 0.87rem;
 }
 
-h4{
-    font-size: 0.8rem;
-}
-
-h5{
-    font-size: 0.77rem;
-}
 small{
     font-size: 0.75rem;
 }
@@ -174,7 +158,7 @@ b{
  aside .sidebar a{
     display: flex;
     color: var(--clr-info-dark);
-    margin-left: 2rem;   /* Bringing list of sidebar to left side */
+    margin-left: 1rem;   /* Bringing list of sidebar to left side */
     gap:1rem;   /* space between the icon and the list items name */
     align-items: center;
     height:3.2rem;  /* vertical gap between the list items */
@@ -225,6 +209,8 @@ aside .sidebar a span.msg_count{
   font-size: 11px;
   border-radius: var(--border-radius-1);
 }
+
+
 
 
 /********
@@ -369,6 +355,21 @@ main .insights .progress .number{
 
 }
 
+/* Main Content Styling */
+main {
+  margin-top: 2rem; /* Increase top margin for separation */
+  padding: 1rem;
+}
+
+main .insights > div {
+  background-color: #fff; /* Light background color for insights */
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+}
+
+
 
 /*********
 savings part
@@ -378,8 +379,8 @@ savings part
 /* Main content area styles */
 
 /* main {
-  margin: 20px;
-  padding: 20px;
+  margin: 0px;
+  padding: 10px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -387,38 +388,179 @@ savings part
 
 /* Savings Goals styles */
 
+/* Savings Goals Styling */
 .savings-goal {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
   overflow: hidden;
 }
 
-.goal-details {
-  float: left;
-  width: 60%;
-}
-
-.goal-progress {
-  float: right;
-  width: 40%;
-  text-align: center;
-}
-
 .progress-bar {
-  background-color: #ddd;
-  height: 20px;
-  border-radius: 10px;
-  margin-top: 10px;
+  background-color: #eee;
+  height: 10px;
+  border-radius: 5px;
+  margin-top: 1rem;
   position: relative;
 }
 
 .savings-progress {
   background-color: #4CAF50;
   height: 100%;
-  border-radius: 10px;
-} 
+  border-radius: 5px;
+}
+
+
+/*********
+Styling the Right Section of the Dashboard
+**********/
+/* Right Section Styling */
+
+.right{
+  margin-top: 1rem;
+}
+
+.right .top{
+  display: flex;
+  justify-content: start;
+  gap:1rem;
+  margin-top: 0rem;
+}
+
+/* .right .top button{
+  display: none;
+} */
+
+.right .theme-toggler{
+  margin-top: 1rem;
+  background-color: var(--clr-white);
+  display: flex;
+  justify-content: space-between;
+  height: 1.6rem;
+  width: 4.2rem;
+  cursor: pointer;
+  border-radius: var(--border-radius-1);
+}
+
+
+.right .theme-toggler span{
+  font-size: 1.2rem;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.right .theme-toggler span.active{
+  background-color: var(--clr-new);
+  color: black;
+}
+
+
+
+.right .top .profile {
+  display: flex;
+  gap: 1rem;
+  align-items: center; /* Vertically center align items */
+}
+
+
+
+/* Styling for Income Sources */
+
+.income-sources {
+  background-color: coral; /* Light gray background */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 5px; 
+  margin: 0px;
+  width: 150px;
+  transition: transform 0.2s ease; /* Smooth scale transition */
+
+  margin-top: 5.5rem;
+}
+
+.expenses-sources{
+  background-color: #7380ec;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 5px; 
+  margin: 0px;
+  width: 150px;
+  transition: transform 0.2s ease; /* Smooth scale transition */
+
+  margin-top: 1rem;
+
+}
+
+/* Heading styles */
+h4 {
+  color: #333; /* Dark gray heading color */
+}
+
+/* Unordered list styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* List item styles with hover effect */
+li {
+  margin-bottom: 5px;
+  transition: background-color 0.2s ease; /* Smooth background color transition */
+}
+
+/* Income and Expense details container styles */
+.source-details, .Expenses-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+  background-color:#f7f7f7; /* White background */
+}
+
+/* Heading within details container */
+.source-details h3, .Expenses-details h3 {
+  margin: 0;
+  font-size: 12px;
+}
+
+/* Hover effect for list items and containers */
+li:hover {
+  background-color: #e0e0e0; /* Light gray background on hover */
+  cursor: pointer;
+}
+
+.income-sources:hover, .expenses-sources:hover {
+  box-shadow: var(--box-shadow);
+}
+
+
+.income-sources h4{
+  color: var(--clr-white);
+}
+
+.expenses-sources h4{
+  color: var(--clr-white);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive styles (if needed) */
 
