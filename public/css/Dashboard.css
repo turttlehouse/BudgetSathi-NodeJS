@@ -57,7 +57,7 @@ body{
     height: 100vh;
     font-size: 0.88rem;
     user-select: none;
-    overflow-x: hidden;
+    overflow-x: hidden;   /* x axis ma horizontal scrolling off gareko */
     background: var(--clr-color-background);
 }
 
@@ -101,7 +101,7 @@ h5{
 small{
     font-size: 0.75rem;
 }
-.profile-photo{
+.profile-photo img{
     width: 2.8rem;
     height: 2.8rem;
     border-radius: 50%;
@@ -167,9 +167,10 @@ b{
 
   }
 
-  aside .h3{
+  /* aside h3{
     font-weight: 400;
-  }
+  } */
+
  aside .sidebar a{
     display: flex;
     color: var(--clr-info-dark);
@@ -196,7 +197,8 @@ b{
   background: var(--clr-light);
   color:var(--clr-primary);      /*color of font i.e text inside sidebar inside active clas*/
   margin-left: 0;
-  border-left: 5px solid var(--clr-primary);  /*blue colour vertical stick will appear on the left side */
+  /* border-left: 5px solid var(--clr-primary);  */
+   /*blue colour vertical stick will appear on the left side */
  }
 
  aside .sidebar a.active::before{
@@ -230,7 +232,7 @@ Styling the Main section
 *********/
 
 main{
-  margin-top: 1rem;
+  margin-top: 1.4rem;
   width: auto;
 }
 
@@ -252,12 +254,14 @@ main .date{
 main .insights{
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  gap:1.6rem; /*horizontal gap between the income,expense and net balance */
+  gap:1rem; /*horizontal gap between the income,expense and net balance */
 }
 
+/*adjusting padding of income,expenses & balanced div to fit the right content */
 main .insights>div{
   background-color: var(--clr-white);
-  padding: var(--card-padding);
+  padding: 0.5rem;
+  /* padding: var(--card-padding); */
   border-radius: var(--card-border-radius); /*card radius */
   margin-top: 1rem;  /* vertical gap between the date and insights */
   box-shadow: var(--box-shadow);  /*casting shadow to make it look attractive */
@@ -269,7 +273,7 @@ main .insights > div:hover{
 }
 
 main .insights > div span {
-  background:  coral;
+  background:  coral;    /* by default color for all income,expense and net balance is set as coral */
   padding: 0.5rem;
   border-radius: 50%;
   color :var(--clr-white); /*icon color jun hamile span vitra haleko xum */
@@ -277,16 +281,21 @@ main .insights > div span {
 }
 
 main .insights >div.expenses span{
-  background-color: var(--clr-danger);
+  background: var(--clr-primary);
 }
 
-main .insights >div.balance span{
-  background-color: var(--clr-success);
+main .insights >div.balanced span{
+  background: var(--clr-success);
 }
 
 main .insights> div .middle {
   display: flex;
   align-items: center;  /*bringing the item inside the income at center */
+  justify-content: space-between;
+}
+
+main .insights > div.middle h1{
+  font-size: 1.6rem;
 }
 
 main h1{
@@ -305,10 +314,12 @@ main .insights p{
   color: var(--clr-dark);
 }
 
+
+
 main .insights .progress{
   position: relative;
   height: 68px;
-  width: 60px;
+  width: 68px;
   border-radius: 50px;
 }
 
@@ -329,7 +340,7 @@ main .insights svg circle{
 main .insights .incomes svg circle{
   stroke-dashoffset: 10;  
   stroke-dasharray: 150; /*half circle will appear */
-  stroke: var(--clr-primary);
+  stroke: var(--clr-warning);
 
 }
 
@@ -338,7 +349,7 @@ main .insights .expenses svg circle{
   stroke-dasharray: 150; /*half circle will appear */
 }
 
-main .insights .balance svg circle{
+main .insights .balanced svg circle{
   stroke-dashoffset: 0;  
   stroke-dasharray: 150; /*half circle will appear */
   stroke: var(--clr-success);
@@ -348,13 +359,73 @@ main .insights .balance svg circle{
 main .insights .progress .number{
   position: absolute;
   top: 5%;
+  left:5%;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1rem;   /* percentage number inside the circle */
 
 }
+
+
+/*********
+savings part
+***********/
+
+
+/* Main content area styles */
+
+/* main {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}  */
+
+/* Savings Goals styles */
+
+.savings-goal {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.goal-details {
+  float: left;
+  width: 60%;
+}
+
+.goal-progress {
+  float: right;
+  width: 40%;
+  text-align: center;
+}
+
+.progress-bar {
+  background-color: #ddd;
+  height: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.savings-progress {
+  background-color: #4CAF50;
+  height: 100%;
+  border-radius: 10px;
+} 
+
+/* Responsive styles (if needed) */
+
+/* @media screen and (max-width: 768px) { */
+  /* Define responsive styles here */
+/* } */
+
  
 
 
