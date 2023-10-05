@@ -50,6 +50,11 @@ app.get('/expenses',(req,res)=>{
     res.render("Myexpenses")
 })
 
+//Get API - defining the route for '/expenses'
+app.get('/Report',(req,res)=>{
+    res.render("Report")
+})
+
 
 
 
