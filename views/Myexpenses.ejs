@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses - Personal Finance Tracker</title>
+    <link rel="stylesheet" href="css/Myexpenses.css"> <!-- Link to your external CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Expenses</h1>
+    </header>
+    <div class="container">
+        <table class="expense-table">
+            <thead>
+                <tr>
+                    <th>Expense Category</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Remarks</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rent</td>
+                    <td>$1000</td>
+                    <td>2023-10-15</td>
+                    <td>Monthly rent payment</td>
+                    <td>
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Groceries</td>
+                    <td>$200</td>
+                    <td>2023-10-14</td>
+                    <td>Weekly grocery shopping</td>
+                    <td>
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </td>
+                </tr>
+                <!-- Add more expense entries here -->
+            </tbody>
+        </table>
+    </div>
+    <button class="add-button">Add Expense</button>
+
+</body>
+</html>
