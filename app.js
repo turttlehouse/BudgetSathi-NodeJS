@@ -55,6 +55,11 @@ app.get('/Report',(req,res)=>{
     res.render("Report")
 })
 
+//Get API - defining the route for '/Settings'
+app.get('/Settings',(req,res)=>{
+    res.render("Settings")
+})
+
 
 
 
