@@ -13,11 +13,41 @@ app.set('view engine','ejs');
 app.use(express.static("public/"))
 
 
-//Get API - defining the route for '/'
+//Post API - defining the route for '/'
 app.get('/',(req,res)=>{
+    res.render('Login')
+})
+
+//Get API - defining the route for '/Register'
+app.get('/Register',(req,res)=>{
+    res.render('Registration')
+})
+
+
+//Get API - defining the route for '/home'
+app.get('/Dashboard',(req,res)=>{
     //rendering the home.ejs file inside views folder
     res.render("Dashboard");
 })
+
+//Get API - defining the route for '/Profile'
+app.get('/Profile',(req,res)=>{
+    res.render("Profile");
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

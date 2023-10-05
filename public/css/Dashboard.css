@@ -5,26 +5,13 @@
 :root {
     --clr-new:yellow;
     --clr-primary: #7380ec;
-    --clr-danger: #ff7782;
     --clr-success: #41f1b6;
     --clr-white: #fff;
-    --clr-info-dark: #7d8da1;
-    --clr-info-light: #dce1eb;
-    --clr-dark: #363949;
-    --clr-warning: #ff4edc;
-    --clr-light: rgba(132, 139, 200, 0.18);
-    --clr-primary-variant: #111e88;
-    --clr-dark-variant: #677483;
-    --clr-color-background: #f6f6f9;
-  
-    --card-border-radius: 2rem;
-    --border-radius-1: 0.4rem;
-    --border-radius-2: 0.8rem;
-    --border-radius-3: 1.2rem;
-  
-    --card-padding: 1.8rem;
-    --padding-1: 1.2rem;
-    --box-shadow: 0 2rem 3rem var(--clr-light);
+    --clr-info-dark: #7d8da1;   /* for sidebar elements */
+    --clr-warning: #ff4edc;     /* for %circle of income */
+    --clr-color-background: #f6f6f9; /*background colour of main section */
+    --border-radius-1: 0.4rem;  /*for date border */
+    --box-shadow: 0 2rem 3rem var(--clr-light);  /* for income,expenses,netbalance containers */
   
   }
   
@@ -44,11 +31,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;   /* link ko underline remove gardinxa <a> anchor tag ma vako sidebar ko list text haru ko */
+    text-decoration: none;      /* link ko underline remove gardinxa <a> anchor tag ma vako sidebar ko list text haru ko */
     border: 0;
     list-style: none;
     appearance: none;
-
   }
 
 body{
@@ -59,6 +45,9 @@ body{
     user-select: none;
     overflow-x: hidden;   /* x axis ma horizontal scrolling off gareko */
     background: var(--clr-color-background);
+
+
+  
 }
 
 .container{
@@ -67,6 +56,8 @@ body{
     gap:1.8rem;
     grid-template-columns: 12rem auto 20rem;
     margin: 0 auto;  /* left side ma space create hunxa */
+
+   
 }
 
 h2.header{
@@ -106,10 +97,6 @@ b{
 .success{
     color:var(--clr-success);
 }
-.danger{
-    color:var(--clr-danger);
-}
-
 .warning{
     color:var(--clr-warnig);
 }
@@ -424,7 +411,7 @@ Styling the Right Section of the Dashboard
 .right .top{
   display: flex;
   justify-content: start;
-  gap:1rem;
+  /* gap:1rem; */
   margin-top: 0rem;
 }
 
@@ -562,7 +549,7 @@ li:hover {
 
 
 
-/* Responsive styles (if needed) */
+/* Responsive styles */
 
 /* @media screen and (max-width: 768px) { */
   /* Define responsive styles here */
