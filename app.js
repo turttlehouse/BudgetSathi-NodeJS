@@ -13,7 +13,7 @@ app.set('view engine','ejs');
 app.use(express.static("public/"))
 
 
-//Post API - defining the route for '/'
+//Get API - defining the route for '/'
 app.get('/',(req,res)=>{
     res.render('Login')
 })
@@ -33,6 +33,10 @@ app.get('/Dashboard',(req,res)=>{
 //Get API - defining the route for '/Profile'
 app.get('/Profile',(req,res)=>{
     res.render("Profile");
+})
+
+app.get('/Notification',(req,res)=>{
+    res.render("Notification")
 })
 
 
