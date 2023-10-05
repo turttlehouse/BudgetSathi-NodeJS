@@ -35,8 +35,14 @@ app.get('/Profile',(req,res)=>{
     res.render("Profile");
 })
 
+//Get API - defining the route for '/Notification'
 app.get('/Notification',(req,res)=>{
     res.render("Notification")
+})
+
+//Get API - defining the route for '/incomes'
+app.get('/incomes',(req,res)=>{
+    res.render("Myincomes")
 })
 
 
