@@ -61,7 +61,7 @@ body{
 }
 
 h2.header{
-  color: var(--clr-primary-variant);
+  color: var(--clr-white);
 }
 
 a{
@@ -108,7 +108,7 @@ b{
   }
 
   aside .top{
-    background-color: var(--clr-white);
+    background-color: var(--clr-primary);
     display: flex;
     justify-content: space-around;  /* moving the CBABAR to the right */
     align-items: center;

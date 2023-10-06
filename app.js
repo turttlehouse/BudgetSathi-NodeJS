@@ -12,6 +12,13 @@ app.set('view engine','ejs');
 //This line of code is configuring express.js to serve static files located in the public directory. By default NodeJS ko kunai pani directory public hudaina
 app.use(express.static("public/"))
 
+//For database connection
+require("./model/index.js")
+
+const ejsMate = require('ejs-mate');
+
+app.engine('ejs', ejsMate)
+
 
 //Get API - defining the route for '/'
 app.get('/',(req,res)=>{
@@ -25,7 +32,7 @@ app.get('/Register',(req,res)=>{
 
 
 //Get API - defining the route for '/home'
-app.get('/Dashboard',(req,res)=>{
+app.get('/home',(req,res)=>{
     //rendering the home.ejs file inside views folder
     res.render("Dashboard");
 })
@@ -59,6 +66,8 @@ app.get('/Report',(req,res)=>{
 app.get('/Settings',(req,res)=>{
     res.render("Settings")
 })
+
+
 
 
 

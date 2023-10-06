@@ -67,3 +67,20 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+
+/* ForgotPassword.css */
+
+.forgot-password {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: #007bff; /* Link color, you can change it to match your design */
+}
+
+.forgot-password a:hover {
+    text-decoration: underline; /* Underline on hover, you can customize this behavior */
+}
