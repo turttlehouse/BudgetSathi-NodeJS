@@ -17,12 +17,18 @@ require("./model/index.js")
 
 //For using Layout Features
 const ejsMate = require('ejs-mate');
-const { users } = require("./model/index.js");
 app.engine('ejs', ejsMate)
 
 //Parsing the incoming form data from the registration page
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+
+//For creating users importing 'users' object from "./model/index.js" module
+const { users } = require("./model/index.js");
+
+// Importing the 'bcryptjs' library for password hashing
+const brcypt=require('bcryptjs');
+const user = require("./model/user.js");
 
 
 //Get API -defining route for '/'
@@ -55,25 +61,40 @@ app.post('/Register',async(req,res)=>{
     const password= req.body.password
     const confirmPassword= req.body['confirm-password']   //value is coming in this property of object
 
-    if(!username || !email || !password || !confirmPassword)
-    {
-        res.send("please provide all the credentials")
-    }
-    else(password !== confirmPassword)
-    {
-        res.send("you password didn't matched")
-    }
-    
-
-
-
-    await users.create({
-        username:username,
-        email:email,
-        password:password,
-        confirmPassword:confirmPassword
+    const emailExist= await users.findAll({
+        where:{
+            email:email,
+        }
     })
-    res.redirect('/Login')
+   
+    if(emailExist.length>0)
+    {
+        return res.send("Users with that email exist")
+    }
+    else
+    {       
+        if (!username || !email || !password || !confirmPassword)
+        {
+            return res.send("please provide all the credentials")
+        }
+        else if(password !== confirmPassword)
+        {
+            return res.send("you password didn't matched")
+        }
+        else
+        {
+            await users.create({
+                username:username,
+                email:email,
+                password:brcypt.hashSync(password,8),
+                confirmPassword:confirmPassword
+            })
+            res.redirect('/Login')
+        }       
+        
+    }
+
+   
 })
 
 
