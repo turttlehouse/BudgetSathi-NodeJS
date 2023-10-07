@@ -15,9 +15,15 @@ app.use(express.static("public/"))
 //For database connection
 require("./model/index.js")
 
+//For using Layout Features
 const ejsMate = require('ejs-mate');
-
+const { users } = require("./model/index.js");
 app.engine('ejs', ejsMate)
+
+//Parsing the incoming form data from the registration page
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
 
 //Get API -defining route for '/'
 app.get('/',(req,res)=>{
@@ -33,6 +39,29 @@ app.get('/Login',(req,res)=>{
 //Get API - defining the route for '/Register'
 app.get('/Register',(req,res)=>{
     res.render('Registration')
+})
+
+//Post API -defining the route for '/Register'
+app.post('/Register',async(req,res)=>{
+    console.log(req.body)
+
+    //first approach - destructuring the object
+    //variable name in JS should not containe hyphen(-) so we are  using the aliasing feature of object destructuring to map the confirm-password property to the confirmpassword variable.
+    // const {username,email,password,'confirm-password':confirmpassword}=req.body
+
+    //second approach - directly accessing object properties
+    const username= req.body.username
+    const email= req.body.email
+    const password= req.body.password
+    const confirmPassword= req.body['confirm-password']   //value is coming in this property of object
+
+    await users.create({
+        username:username,
+        email:email,
+        password:password,
+        confirmPassword:confirmPassword
+    })
+    res.redirect('/Login')
 })
 
 
