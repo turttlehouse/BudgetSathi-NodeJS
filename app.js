@@ -19,9 +19,14 @@ const ejsMate = require('ejs-mate');
 
 app.engine('ejs', ejsMate)
 
-
-//Get API - defining the route for '/'
+//Get API -defining route for '/'
 app.get('/',(req,res)=>{
+    res.render('Landingpage')
+})
+
+
+//Get API - defining the route for '/Login'
+app.get('/Login',(req,res)=>{
     res.render('Login')
 })
 
@@ -32,7 +37,7 @@ app.get('/Register',(req,res)=>{
 
 
 //Get API - defining the route for '/home'
-app.get('/home',(req,res)=>{
+app.get('/Dashboard',(req,res)=>{
     //rendering the home.ejs file inside views folder
     res.render("Dashboard");
 })
