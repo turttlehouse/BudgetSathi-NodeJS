@@ -37,11 +37,6 @@ app.get('/',(req,res)=>{
 })
 
 
-//Get API - defining the route for '/Login'
-app.get('/Login',(req,res)=>{
-    res.render('Login')
-})
-
 //Get API - defining the route for '/Register'
 app.get('/Register',(req,res)=>{
     res.render('Registration')
@@ -87,7 +82,7 @@ app.post('/Register',async(req,res)=>{
                 username:username,
                 email:email,
                 password:brcypt.hashSync(password,8),
-                confirmPassword:confirmPassword
+                confirmPassword:brcypt.hashSync(confirmPassword,8)
             })
             res.redirect('/Login')
         }       
@@ -97,6 +92,46 @@ app.post('/Register',async(req,res)=>{
    
 })
 
+
+//Get API - defining the route for '/Login'
+app.get('/Login',(req,res)=>{
+    res.render('Login')
+})
+
+//Post API -defining the rout for '/Login'
+app.post('/Login',async(req,res)=>{
+    const email=req.body.email
+    const password =req.body.password
+
+    //checking if the email exist in the table 'users' or not.
+    const userExists= await users.findAll({
+        where :{
+            email:email
+        }
+    })
+    if (userExists.length>0)
+    {
+        //checking password
+        //1st argument password is the plain text password from register form and 2nd argument is the old password stored in database inside the 0 index of array userExists.
+        const isMatch=brcypt.compareSync(password,userExists[0].password)
+        
+        //isMatch ko output vaneko either true or false dinxa compareSync ley
+        //True vako case
+        if(isMatch)
+        {
+            res.redirect('/Dashboard')
+        }
+        else
+        {
+            res.send("invalid email or password")
+        }
+    }
+    else
+    {
+        res.send("Invalid email or Password")
+
+    }
+})
 
 //Get API - defining the route for '/home'
 app.get('/Dashboard',(req,res)=>{
