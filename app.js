@@ -55,6 +55,18 @@ app.post('/Register',async(req,res)=>{
     const password= req.body.password
     const confirmPassword= req.body['confirm-password']   //value is coming in this property of object
 
+    if(!username || !email || !password || !confirmPassword)
+    {
+        res.send("please provide all the credentials")
+    }
+    else(password !== confirmPassword)
+    {
+        res.send("you password didn't matched")
+    }
+    
+
+
+
     await users.create({
         username:username,
         email:email,
