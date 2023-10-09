@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Finance Tracker Dashboard</title>
+    <title>BudgetSathi</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="css/Dashboard.css">
     <link rel="stylesheet" href="css/Profile.css">
-
-
+    <link rel="stylesheet" href="css/Notification.css">
+    <link rel="stylesheet" href="css/Myincome.css">
 </head>
 <body>
     <div class="container">
@@ -17,7 +17,7 @@
             <div class="top">
 
                 <div class="logo">
-                    <h2 class="header">Personal<br/><span class="primary">Finance-Tracker</span></h2>
+                    <a href="latestlogo.png"></a><h2 class="header">Budget<span class="success">Sathi</span></h2>
 
                 </div>
 
@@ -32,7 +32,7 @@
 
              <div class="sidebar">
 
-                <a href="#" class="active">
+                <a href="/Dashboard" class="active">
                     <span class="material-symbols-outlined">
                         grid_view
                     </span>
@@ -98,126 +98,21 @@
         <!-- aside section end -->
 
         <!-- main section start here -->
-       
-        <%- body %>
+        <main>
+            <%- body %>
+
+        </main>
+
         <!-- main section end here -->
 
         <!-- Right section start here -->
-        <div class="right">
-
-            <div class="top">
-
-               
-
-                <div class="theme-toggler">
-                    <span class="material-symbols-outlined active">light_mode</span>
-                    <span class="material-symbols-outlined">dark_mode</span>
-                </div>
-
-                <div class="profile">
-                    <div class="info">
-                        <p>Admin</p>
-                        <small class="text-muted"></small>
-                    </div>
-
-                    <div class="profile-photo">
-                        <img src="Images/manishSir.jpg">
-                    </div>
-
-                </div>
-
-            </div>    
-                <!-- Ending top here -->
-
-
-                <!-- start Income and Expense Source-->
-                <div class="income-sources">
-                    <h4>Main Income Sources</h4>
-                    <ul>
-                        <li>
-                            <div class="source-details">
-                                <h3>Revenue from Digital Pathsala Courses</h3>
-                            </div>
-                        </li>
-                    </ul>
-            
-                    <ul>
-                        <li>
-                            <div class="source-details">
-                                <h3>Investment Income</h3>
-                            </div>
-                        </li>
-                    </ul>
-            
-                    <ul>
-                        <li>
-                            <div class="source-details">
-                                <h3>Freelance Work</h3>
-                            </div>
-                        </li>
-                    </ul>
-            
-                    <ul>
-                        <li>
-                            <div class="source-details">
-                                <h3>Dividend Income</h3>
-                            </div>
-                        </li>
-                    </ul>
-            
-                <!-- other more income sources details here as needed -->
-            
-            
-                </div>
-            
-                <div class="expenses-sources">
-                    <h4>Major Expenses</h4>
-                    <ul>
-                        <li>
-                            
-                            <div class="Expenses-details">
-                                <h3>Food Expenses</h3>
-                            </div>
-                        </li>
-                    </ul>
-            
-                    <ul>
-                        <li>
-                            <div class="Expenses-details">
-                                <h3>Transportation</h3>
-                            </div>
-                        </li>
-                    </ul>
-            
-                    <ul>
-                        <li>
-                            <div class="Expenses-details">
-                                <h3>Emergency Fund</h3>
-                            </div>
-                        </li>
-                    </ul>
-            
-                    <ul>
-                        <li>
-                            <div class="Expenses-details">
-                                <h3>Health Care</h3>
-                            </div>
-                        </li>
-                    </ul>
-                    <!-- other more expenses details here as needed -->
-            
-                </div>
-                <!-- end recent updates here -->
-     
-            
-            <!-- other analytics coming soon -->    
-
-        </div>
+       
         <!-- Right section end here -->      
 
     </div>
     
-      
+     
+
    
 </body>
 </html>

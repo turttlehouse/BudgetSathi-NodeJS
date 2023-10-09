@@ -194,13 +194,24 @@ app.get('/Settings',(req,res)=>{
 
 
 
+
+
+
+
+
+
 // After the server start listening on a specific port for incoming requests
 app.listen(port,(req,res)=>{
     console.log("NodeJs Project has started at port no. 5000")
 })
 
+
 //Packages used
 
-//express - For -> (Routing) to define routes, (Templates) to use EJS engine which help in generating dynamic HTML content on the server and sending it to the client,(For static file handling) : we can serve static files easily using express,(For security) : Express provides a foundation for implementing security practices such as input validation,authentication, and authorization.
-//nodemon - Automatically restarting our Node.js application whenever changes are detected in our codebase
-// ejs - Embedded JavaScript a template engine for JavaScript that allows us to embed dynamic JavaScript code within our HTML or other markup templates. 
+//1)express - For -> (Routing) to define routes, (Templates) to use EJS engine which help in generating dynamic HTML content on the server and sending it to the client,(For static file handling) : we can serve static files easily using express,(For security) : Express provides a foundation for implementing security practices such as input validation,authentication, and authorization.
+//2)nodemon - Automatically restarting our Node.js application whenever changes are detected in our codebase
+//3)ejs - Embedded JavaScript a template engine for JavaScript that allows us to embed dynamic JavaScript code within our HTML or other markup templates. 
+//4)ejs-mate -It is a middleware for Express.js that enhances the functionality of the EJS template engine. It helps to maintain consistent layouts in your Express.js application by providing features like partials and block content, making it easier to reuse and organize our templates.
+//5)sequelize - ORM to replace raw queries with function
+//6)mysql2  - database version of mysql. library used for simplifying database interactions. It provides an abstraction layer over SQL databases, allowing developers to work with databases using JavaScript objects and functions.
+//7)brcyptjs - JavaScript library used for hashing and salting passwords. It helps secure user authentication by safely storing and verifying passwords in a hashed format, protecting user data from unauthorized access.

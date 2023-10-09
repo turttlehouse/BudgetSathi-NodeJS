@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Incomes - Personal Finance Tracker</title>
-    <link rel="stylesheet" href="css/Myincomes.css"> <!-- Link to your external CSS file -->
-</head>
-<body>
+<% layout('layouts/dashboard-asidebar')%>   
     <header>
         <h1>Incomes</h1>
     </header>
@@ -23,7 +15,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Revenue from Digital Pathsala Courses</td>
+                    <td><input type="text" id="fname" oninput="data()" name="manishsir"/></td>
                     <td>Rs.300000/-</td>
                     <td>2023-10-15</td>
                     <td>Online course sales</td>
@@ -48,5 +40,29 @@
     </div>
     <button class="add-button">Add Income</button>
 
-</body>
-</html>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+
+<!-- <script>
+    function data(){
+        const hello = document.getElementById('fname').value;  
+        console.log(hello);
+
+    }
+    
+    function data(e) {
+        e.preventDefault();
+
+      let name = $('#fname').val();
+      console.log(name);
+    }
+    console.log("hello");
+    
+</script> -->
+
+
+       
+      
+
+
+
