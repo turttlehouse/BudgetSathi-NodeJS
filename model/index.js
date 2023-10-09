@@ -31,9 +31,13 @@ db.sequelize = sequelize;
 
 // importing model files 
 db.users = require("./user.js")(sequelize, DataTypes);
+db.incomes = require("./Income.js")(sequelize, DataTypes);
+db.expense = require("./Expenses.js")(sequelize, DataTypes);
 
 
-db.sequelize.sync({ force: false  }).then(() => {
+
+
+db.sequelize.sync({ force: false }).then(() => {
   console.log("yes re-sync done");
 });
 
