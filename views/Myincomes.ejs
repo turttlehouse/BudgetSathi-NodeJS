@@ -3,7 +3,7 @@
 
   
   <header>
-    <h1>Add your Incomes here!</h1>
+    <h1>Add your Incomes here</h1>
 </header>
 
 <!-- Form to Add Income -->
@@ -33,12 +33,13 @@
   
 <!-- Table to show the added source of Income Details -->
 <header>
-    <h1>Incomes</h1>
+    <h1>Your Source of Incomes</h1>
   </header>
     <div class="container">
         <table class="income-table">
             <thead>
                 <tr>
+                    <th>S.N</th>
                     <th>Source of Income</th>
                     <th>Amount</th>
                     <th>Date</th>
@@ -47,22 +48,26 @@
                 </tr>
             </thead>
             <tbody>
+                <% Allincomedata.forEach((income,index)=>{ %>
 
-                <tr>
-                    <td>ReactCourse</td>
-                    <td>Rs4000</td>
-                    <td>2080-10-10</td>
-                    <td>Salary after teaching react course</td>
-                    <td>
-                        <button class="edit-button">Edit</button>
-                        <button class="delete-button">Delete</button>
-                    </td>
-                </tr>    
-                            
+                    <tr>
+                        <td><%= index+1 %></td>
+                        <td><%= income.SourceOfIncome %></td>
+                        <td> <%= income.Amount %></td>
+                        <td><%= income.Date.toDateString().slice(0, 15) %></td>
+                        <td><%= income.Remarks %></td>
+                        <td>
+                            <button class="edit-button">Edit</button>
+                            <button class="delete-button">Delete</button>
+                        </td>
+                    </tr>    
+                <% }) %>
             </tbody>         
         </table>
     </div>
  
+
+
 
 
        

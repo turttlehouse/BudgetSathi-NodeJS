@@ -155,7 +155,10 @@ app.get('/Notification',(req,res)=>{
 
 //Get API - defining the route for '/incomes'
 app.get('/incomes',async(req,res)=>{
-    res.render("Myincomes")
+    //To show dynamic data in front end table fetching all the data from the incomes table
+    const incomesdata = await incomes.findAll();
+    // console.log(incomesdata);
+    res.render("Myincomes",{Allincomedata:incomesdata})
 })
 
 //Post API -defining the route for '/incomes' to add incomes data from form
