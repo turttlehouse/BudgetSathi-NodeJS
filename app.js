@@ -178,6 +178,22 @@ app.post('/incomes',async(req,res)=>{
     res.redirect('/incomes')
 })
 
+//Delete income sources
+app.get("/deleteIncome/:id",async(req,res)=>{
+    //grabing the id of which income object has been clicked
+    const id = req.params.id
+
+     await incomes.destroy({
+        where : {
+            id:id
+        }
+
+    })
+
+    res.redirect("/incomes")
+
+})
+
 
 
 
@@ -185,6 +201,17 @@ app.post('/incomes',async(req,res)=>{
 app.get('/expenses',async(req,res)=>{
     res.render("Myexpenses")
 })
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -200,14 +227,6 @@ app.get('/Report',(req,res)=>{
 app.get('/Settings',(req,res)=>{
     res.render("Settings")
 })
-
-
-
-
-
-
-
-
 
 
 
