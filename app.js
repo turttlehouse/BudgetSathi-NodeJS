@@ -28,7 +28,11 @@ const { users } = require("./model/index.js");
 
 // Importing the 'bcryptjs' library for password hashing
 const brcypt=require('bcryptjs');
-const user = require("./model/user.js");
+
+//For creating incomes source importing 'incomes' object from "./model/index.js" module
+const { incomes } = require("./model/index.js");
+
+
 
 
 //Get API -defining route for '/'
@@ -44,7 +48,7 @@ app.get('/Register',(req,res)=>{
 
 //Post API -defining the route for '/Register'
 app.post('/Register',async(req,res)=>{
-    console.log(req.body)
+    // console.log(req.body)
 
     //first approach - destructuring the object
     //variable name in JS should not containe hyphen(-) so we are  using the aliasing feature of object destructuring to map the confirm-password property to the confirmpassword variable.
@@ -150,14 +154,39 @@ app.get('/Notification',(req,res)=>{
 })
 
 //Get API - defining the route for '/incomes'
-app.get('/incomes',(req,res)=>{
+app.get('/incomes',async(req,res)=>{
     res.render("Myincomes")
 })
 
+//Post API -defining the route for '/incomes' to add incomes data from form
+app.post('/incomes',async(req,res)=>{
+    // console.log(req.body)
+    const IncomeSource = req.body.IncomeSource
+    const Amount =req.body.Amount
+    const Date = req.body.Date
+    const Remarks = req.body.Remarks
+
+    await incomes.create({
+        SourceOfIncome:IncomeSource,
+        Amount:Amount,
+        Date:Date,
+        Remarks:Remarks
+    })
+    res.redirect('/incomes')
+})
+
+
+
+
 //Get API - defining the route for '/expenses'
-app.get('/expenses',(req,res)=>{
+app.get('/expenses',async(req,res)=>{
     res.render("Myexpenses")
 })
+
+
+
+
+
 
 //Get API - defining the route for '/expenses'
 app.get('/Report',(req,res)=>{
@@ -168,27 +197,6 @@ app.get('/Report',(req,res)=>{
 app.get('/Settings',(req,res)=>{
     res.render("Settings")
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

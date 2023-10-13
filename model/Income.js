@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       Date:{
-        type:DataTypes.INTEGER,
+        type:DataTypes.DATE,
         allowNull:false,
       },
       Remarks:{

@@ -1,7 +1,40 @@
 <% layout('layouts/dashboard-asidebar')%>   
-    <header>
-        <h1>Incomes</h1>
-    </header>
+  
+
+  
+  <header>
+    <h1>Add your Incomes here!</h1>
+</header>
+
+<!-- Form to Add Income -->
+
+<div class="container">
+    <form class="income-form" action="/incomes" method="POST">
+        <div class="input-container">
+            <label for="IncomeSource">Source of Income</label>
+            <input type="text" id="IncomeSource" name="IncomeSource" placeholder="Enter source of income" required>
+        </div>
+        <div class="input-container">
+            <label for="Amount">Amount</label>
+            <input type="text" id="Amount" name="Amount" placeholder="Enter amount" required>
+        </div>
+        <div class="input-container">
+            <label for="Date">Date</label>
+            <input type="date" id="Date" name="Date" required>
+        </div>
+        <div class="input-container">
+            <label for="Remarks">Remarks</label>
+            <textarea id="Remarks" name="Remarks" placeholder="Enter remarks" required></textarea>
+        </div>
+        <button type="submit">Add Income</button>
+    </form>
+</div>
+
+  
+<!-- Table to show the added source of Income Details -->
+<header>
+    <h1>Incomes</h1>
+  </header>
     <div class="container">
         <table class="income-table">
             <thead>
@@ -14,51 +47,22 @@
                 </tr>
             </thead>
             <tbody>
+
                 <tr>
-                    <td><input type="text" id="fname" oninput="data()" name="manishsir"/></td>
-                    <td>Rs.300000/-</td>
-                    <td>2023-10-15</td>
-                    <td>Online course sales</td>
+                    <td>ReactCourse</td>
+                    <td>Rs4000</td>
+                    <td>2080-10-10</td>
+                    <td>Salary after teaching react course</td>
                     <td>
                         <button class="edit-button">Edit</button>
                         <button class="delete-button">Delete</button>
                     </td>
-                </tr>
-                <tr>
-                    <td>Investment Income</td>
-                    <td>Rs.20000/-</td>
-                    <td>2023-10-14</td>
-                    <td>Stock dividends</td>
-                    <td>
-                        <button class="edit-button">Edit</button>
-                        <button class="delete-button">Delete</button>
-                    </td>
-                </tr>
-                <!--You can  Add more income entries here -->
-            </tbody>
+                </tr>    
+                            
+            </tbody>         
         </table>
     </div>
-    <button class="add-button">Add Income</button>
-
-
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
-
-<!-- <script>
-    function data(){
-        const hello = document.getElementById('fname').value;  
-        console.log(hello);
-
-    }
-    
-    function data(e) {
-        e.preventDefault();
-
-      let name = $('#fname').val();
-      console.log(name);
-    }
-    console.log("hello");
-    
-</script> -->
+ 
 
 
        
