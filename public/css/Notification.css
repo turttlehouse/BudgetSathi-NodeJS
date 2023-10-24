@@ -33,11 +33,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 550px;
 }
 
-.notification-text {
-    flex: 1;
-}
+
 
 .notification-time {
     color: #888;
