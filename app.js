@@ -268,6 +268,16 @@ app.get('/deleteExpense/:id',async(req,res)=>{
 
 })
 
+app.get('/Updateexpense/:id',async(req,res)=>{
+    const id = req.params.id;
+    const singleexpensedata = await expense.findAll({
+        where:{
+            id:id
+        }
+    });
+    // console.log(singleexpensedata);    
+    res.render('Updateexpense',{singleexpensedata})
+})
 
 
 

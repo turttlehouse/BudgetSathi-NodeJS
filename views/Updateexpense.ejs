@@ -1,0 +1,28 @@
+<% layout('layouts/dashboard-asidebar')%>
+<link rel="stylesheet" href="/css/Dashboard.css">
+<link rel="stylesheet" href="/css/Updateexpense.css">
+
+<div class="container">
+    <form class="expense-form" method="POST"> 
+        <div class="input-container">
+            <label for="ExpenseCategory">Expense Category</label>
+            <input type="text" value="<%= singleexpensedata[0].ExpenseCategory %>" id="ExpenseCategory" name="ExpenseCategory"  placeholder="Enter expense category" required>
+        </div>
+        <div class="input-container">
+            <label for="Amount">Amount</label>
+            <input type="number" value="<%= singleexpensedata[0].Amount %>" id="Amount" name="Amount" placeholder="Enter amount" required>
+        </div>
+        <div class="input-container">
+            <label for="Date">Date</label>
+            <input type="date" value="<% singleexpensedata[0].Date %>" id="Date" name="Date" required>
+        </div>
+        <div class="input-container">
+            <label for="Remarks">Remarks</label>
+            <textarea id="Remarks" name="Remarks" placeholder="Enter remarks">
+                <%= singleexpensedata[0].Remarks %>
+            </textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
