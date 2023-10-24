@@ -32,6 +32,7 @@
         <table class="expense-table">
             <thead>
                 <tr>
+                    <th>S.N</th>
                     <th>Expense Category</th>
                     <th>Amount</th>
                     <th>Date</th>
@@ -44,6 +45,7 @@
 
               
                     <tr>
+                            <td><%= index+1 %></td>
                             <td><%= expense.ExpenseCategory %></td>
                             <td><%= expense.Amount %></td>
                             <td><%= expense.Date.toDateString().slice(0,15) %></td>
