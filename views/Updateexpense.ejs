@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/css/Updateexpense.css">
 
 <div class="container">
-    <form class="expense-form" method="POST"> 
+    <form class="expense-form" action="/Updateexpense/<%= singleexpensedata[0].id %>" method="POST"> 
         <div class="input-container">
             <label for="ExpenseCategory">Expense Category</label>
             <input type="text" value="<%= singleexpensedata[0].ExpenseCategory %>" id="ExpenseCategory" name="ExpenseCategory"  placeholder="Enter expense category" required>

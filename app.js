@@ -279,6 +279,25 @@ app.get('/Updateexpense/:id',async(req,res)=>{
     res.render('Updateexpense',{singleexpensedata})
 })
 
+app.post('/Updateexpense/:id',async(req,res)=>{
+    const id = req.params.id;
+    const {ExpenseCategory,Amount,Date,Remarks}= req.body;
+    await expense.update(
+        {
+            ExpenseCategory,
+            Amount,
+            Date,
+            Remarks
+
+        },{
+            where :{
+                id:id
+            }
+
+        })
+        res.redirect('/Myexpenses')
+})
+
 
 
 
