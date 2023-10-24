@@ -41,19 +41,19 @@
                 </tr>
             </thead>
             <tbody>
-                <% Allexpenses.forEach((expense,index)=>{ %>
+                <% Allexpenses.forEach((expenses,index)=>{ %>
 
               
                     <tr>
                             <td><%= index+1 %></td>
-                            <td><%= expense.ExpenseCategory %></td>
-                            <td><%= expense.Amount %></td>
-                            <td><%= expense.Date.toDateString().slice(0,15) %></td>
-                            <td><%= expense.Remarks %></td>
+                            <td><%= expenses.ExpenseCategory %></td>
+                            <td><%= expenses.Amount %></td>
+                            <td><%= expenses.Date.toDateString().slice(0,15) %></td>
+                            <td><%= expenses.Remarks %></td>
 
                             <td>
-                            <button class="delete-button"><a href="">Delete</a></button>
-                            <button class="edit-button"><a href="">Update</a></button>
+                            <button class="delete-button"><a href="">Update</a></button>
+                            <button class="edit-button"><a href="/deleteExpense/<%= expenses.id %>">Delete</a></button>
                             
                             </td>                
                     </tr>

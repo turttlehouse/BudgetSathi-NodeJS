@@ -238,7 +238,7 @@ app.post("/Updateincome/:id",async(req,res)=>{
 //Get API - defining the route for '/Myexpenses'
 app.get('/Myexpenses',async(req,res)=>{
     const Allexpenses = await expense.findAll();
-    console.log(Allexpenses);
+    // console.log(Allexpenses);
     res.render("Myexpenses",{Allexpenses})
 })
 
@@ -256,6 +256,17 @@ app.post('/Myexpenses',async(req,res)=>{
     res.redirect('/Myexpenses')
 })
 
+app.get('/deleteExpense/:id',async(req,res)=>{
+    const id = req.params.id;
+
+    await expense.destroy({
+        where :{
+            id:id
+        }
+    })
+    res.redirect('/Myexpenses')
+
+})
 
 
 

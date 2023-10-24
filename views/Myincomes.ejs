@@ -54,8 +54,8 @@
                         <td><%= income.Date.toDateString().slice(0, 15) %></td>
                         <td><%= income.Remarks %></td>
                         <td>
-                            <button class="delete-button"><a href="/deleteIncome/<%= income.id %>">Delete</a></button>
                             <button class="edit-button"><a href="Updateincome/<%= income.id %>">Update</a></button>
+                            <button class="delete-button"><a href="/deleteIncome/<%= income.id %>">Delete</a></button>
                         </td>
                     </tr>    
                 <% }) %>
