@@ -88,3 +88,7 @@ main {
     font-size: 18px;
     margin: 0;
 }
+
+.financial-info {
+    margin-top: 20px; /* Adjust the margin-top as needed to control the space between sections */
+}
