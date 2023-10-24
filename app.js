@@ -33,8 +33,6 @@ const brcypt=require('bcryptjs');
 const { incomes } = require("./model/index.js");
 
 
-
-
 //Get API -defining route for '/'
 app.get('/',(req,res)=>{
     res.render('Landingpage')
@@ -153,16 +151,20 @@ app.get('/Notification',(req,res)=>{
     res.render("Notification")
 })
 
+
 //Get API - defining the route for '/incomes'
-app.get('/incomes',async(req,res)=>{
+// Route to render the Myincomes template to display all incomes
+app.get('/Myincomes',async(req,res)=>{
+    //Read Operation
     //To show dynamic data in front end table fetching all the data from the incomes table
     const incomesdata = await incomes.findAll();
     // console.log(incomesdata);
-    res.render("Myincomes",{Allincomedata:incomesdata})
+    res.render("Myincomes.ejs",{Allincomedata:incomesdata})
 })
 
 //Post API -defining the route for '/incomes' to add incomes data from form
-app.post('/incomes',async(req,res)=>{
+// Route to render the Myincomes template to add incomes
+app.post('/Myincomes',async(req,res)=>{
     // console.log(req.body)
     const IncomeSource = req.body.IncomeSource
     const Amount =req.body.Amount
@@ -175,10 +177,11 @@ app.post('/incomes',async(req,res)=>{
         Date:Date,
         Remarks:Remarks
     })
-    res.redirect('/incomes')
+    res.redirect('/Myincomes')
 })
 
-//Delete income sources
+
+//Get API - defining the route for '/deleteIncome'
 app.get("/deleteIncome/:id",async(req,res)=>{
     //grabing the id of which income object has been clicked
     const id = req.params.id
@@ -190,15 +193,31 @@ app.get("/deleteIncome/:id",async(req,res)=>{
 
     })
 
-    res.redirect("/incomes")
-
+    res.redirect("/Myincomes")
 })
+
+//Get API -defining the route for '/Updateincome'
+//Route to render the Myincomes template for updating a specific income
+app.get('/Updateincome/:id',async(req,res)=>{
+    const id = req.params.id
+    const singleincomedata = await incomes.findAll({
+        where : {
+            id : id
+        }
+    })
+    console.log(singleincomedata);
+    res.render("Updateincome",{singleincomedata:singleincomedata})
+})
+
+//Post API -defining the route for '/Updateincome'
+
+
 
 
 
 
 //Get API - defining the route for '/expenses'
-app.get('/expenses',async(req,res)=>{
+app.get('/Myexpenses',async(req,res)=>{
     res.render("Myexpenses")
 })
 
@@ -234,7 +253,6 @@ app.get('/Settings',(req,res)=>{
 app.listen(port,(req,res)=>{
     console.log("NodeJs Project has started at port no. 5000")
 })
-
 
 //Packages used
 

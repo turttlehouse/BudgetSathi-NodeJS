@@ -1,0 +1,26 @@
+<% layout('layouts/dashboard-asidebar')%>
+<link rel="stylesheet" href="/css/Dashboard.css">
+<link rel="stylesheet" href="/css/Updateincome.css">
+
+
+<div class="container">
+    <form class="income-form" action="/Updateincome/<%= singleincomedata[0].id %>" method="POST">
+        <div class="input-container">
+            <label for="IncomeSource">Source of Income</label>
+            <input type="text" id="IncomeSource" name="IncomeSource" value="<%= singleincomedata[0].SourceOfIncome %>" placeholder="Enter source of income" required>
+        </div>
+        <div class="input-container">
+            <label for="Amount">Amount</label>
+            <input type="text" id="Amount" name="Amount" value="<%= singleincomedata[0].Amount %>" placeholder="Enter amount" required>
+        </div>
+        <div class="input-container">
+            <label for="Date">Date</label>
+            <input type="date" id="Date" value="<%= singleincomedata[0].Date.toDateString().slice(0, 15) %>" name="Date"  required>
+        </div>
+        <div class="input-container">
+            <label for="Remarks">Remarks</label>
+            <textarea id="Remarks" name="Remarks" placeholder="Enter remarks" required><%= singleincomedata[0].Remarks %></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>

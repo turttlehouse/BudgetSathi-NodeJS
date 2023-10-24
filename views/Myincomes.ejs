@@ -1,18 +1,15 @@
 <% layout('layouts/dashboard-asidebar')%>   
-  
 
-  
-  <header>
+<header>
     <h1>Add your Incomes here</h1>
 </header>
 
 <!-- Form to Add Income -->
-
 <div class="container">
-    <form class="income-form" action="/incomes" method="POST">
+    <form class="income-form" method="POST">
         <div class="input-container">
             <label for="IncomeSource">Source of Income</label>
-            <input type="text" id="IncomeSource" name="IncomeSource" placeholder="Enter source of income" required>
+            <input type="text" id="IncomeSource" name="IncomeSource"  placeholder="Enter source of income" required>
         </div>
         <div class="input-container">
             <label for="Amount">Amount</label>
@@ -20,7 +17,7 @@
         </div>
         <div class="input-container">
             <label for="Date">Date</label>
-            <input type="date" id="Date" name="Date" required>
+            <input type="date" id="Date" name="Date"  required>
         </div>
         <div class="input-container">
             <label for="Remarks">Remarks</label>
@@ -57,8 +54,8 @@
                         <td><%= income.Date.toDateString().slice(0, 15) %></td>
                         <td><%= income.Remarks %></td>
                         <td>
-                            <button class="edit-button">Edit</button>
                             <button class="delete-button"><a href="/deleteIncome/<%= income.id %>">Delete</a></button>
+                            <button class="edit-button"><a href="Updateincome/<%= income.id %>">Update</a></button>
                         </td>
                     </tr>    
                 <% }) %>
