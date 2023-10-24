@@ -40,11 +40,14 @@
                 </tr>
             </thead>
             <tbody>
+                <% Allexpenses.forEach((expense,index)=>{ %>
+
+              
                     <tr>
-                            <td>DigitalCourse</td>
-                            <td>1000</td>
-                            <td>2080-01-01</td>
-                            <td>Earning this month</td>
+                            <td><%= expense.ExpenseCategory %></td>
+                            <td><%= expense.Amount %></td>
+                            <td><%= expense.Date.toDateString().slice(0,15) %></td>
+                            <td><%= expense.Remarks %></td>
 
                             <td>
                             <button class="delete-button"><a href="">Delete</a></button>
@@ -52,6 +55,8 @@
                             
                             </td>                
                     </tr>
+
+             <%   }) %>
             </tbody>
         </table>
     </div>

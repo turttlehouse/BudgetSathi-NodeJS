@@ -237,12 +237,14 @@ app.post("/Updateincome/:id",async(req,res)=>{
 
 //Get API - defining the route for '/Myexpenses'
 app.get('/Myexpenses',async(req,res)=>{
-    res.render("Myexpenses")
+    const Allexpenses = await expense.findAll();
+    console.log(Allexpenses);
+    res.render("Myexpenses",{Allexpenses})
 })
 
 //Post API - defining the route for '/Myexpenses'
 app.post('/Myexpenses',async(req,res)=>{
-    
+
     const {ExpenseCategory,Amount,Date,Remarks} = req.body;
     
     await expense.create({
