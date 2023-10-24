@@ -210,6 +210,22 @@ app.get('/Updateincome/:id',async(req,res)=>{
 })
 
 //Post API -defining the route for '/Updateincome'
+app.post("/Updateincome/:id",async(req,res)=>{
+    const id = req.params.id;
+    const { IncomeSource,Amount,Date,Remarks} = req.body;
+
+    await incomes.update({
+        SourceOfIncome:IncomeSource,
+        Amount:Amount,
+        Date:Date,
+        Remarks:Remarks
+    },{
+        where :{
+            id:id
+        }
+    })
+    res.redirect('/Myincomes');
+})
 
 
 

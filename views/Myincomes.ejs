@@ -63,6 +63,20 @@
         </table>
     </div>
  
+    <script>
+        // Geting the date input field by its id
+        const dateInput = document.getElementById('Date');
+        
+        // Creating a JavaScript Date object for today's date
+        const today = new Date();
+        
+        // Formating the date as YYYY-MM-DD (which is the format the input[type=date] expects)
+        const todayFormatted = today.toISOString().split('T')[0];
+        
+        // Now Setting the default value for the date input field
+        dateInput.value = todayFormatted;
+    </script>
+    
 
 
 
