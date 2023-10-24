@@ -3,6 +3,31 @@
     <header>
         <h1>Expenses</h1>
     </header>
+
+    <div class="container">
+        <form class="expense-form" method="POST"> 
+            <div class="input-container">
+                <label for="ExpenseCategory">Expense Category</label>
+                <input type="text" id="ExpenseCategory" name="ExpenseCategory" placeholder="Enter expense category" required>
+            </div>
+            <div class="input-container">
+                <label for="Amount">Amount</label>
+                <input type="number" id="Amount" name="Amount" placeholder="Enter amount" required>
+            </div>
+            <div class="input-container">
+                <label for="Date">Date</label>
+                <input type="date" id="Date" name="Date" required>
+            </div>
+            <div class="input-container">
+                <label for="Remarks">Remarks</label>
+                <textarea id="Remarks" name="Remarks" placeholder="Enter remarks"></textarea>
+            </div>
+            <button type="submit">Add Expense</button>
+        </form>
+    </div>
+
+
+
     <div class="container">
         <table class="expense-table">
             <thead>
@@ -16,12 +41,32 @@
             </thead>
             <tbody>
                     <tr>
-                            <td><input type="text" id="income" >DigitalCourse</td>
-                            <td><input type="text" id="Amount" />1000</td>
-                            <td><input type="text" id="Date" >2080-01-01</td>
-                            <td><input type="text" id="Remarks" />Earning this month</td>
-                    </tr>
+                            <td>DigitalCourse</td>
+                            <td>1000</td>
+                            <td>2080-01-01</td>
+                            <td>Earning this month</td>
 
+                            <td>
+                            <button class="delete-button"><a href="">Delete</a></button>
+                            <button class="edit-button"><a href="">Update</a></button>
+                            
+                            </td>                
+                    </tr>
             </tbody>
         </table>
     </div>
+
+    <script>
+        // Geting the date input field by its id
+        const dateInput = document.getElementById('Date');
+        
+        // Creating a JavaScript Date object for today's date
+        const today = new Date();
+        
+        // Formating the date as YYYY-MM-DD (which is the format the input[type=date] expects)
+        const todayFormatted = today.toISOString().split('T')[0];
+        
+        // Now Setting the default value for the date input field
+        dateInput.value = todayFormatted;
+    </script>
+    

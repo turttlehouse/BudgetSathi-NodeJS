@@ -32,6 +32,9 @@ const brcypt=require('bcryptjs');
 //For creating incomes source importing 'incomes' object from "./model/index.js" module
 const { incomes } = require("./model/index.js");
 
+//For creating expenses category importing 'expenes' object from "./model/index.js" module
+const { expense } = require("./model/index.js");
+
 
 //Get API -defining route for '/'
 app.get('/',(req,res)=>{
@@ -162,7 +165,7 @@ app.get('/Myincomes',async(req,res)=>{
     res.render("Myincomes.ejs",{Allincomedata:incomesdata})
 })
 
-//Post API -defining the route for '/incomes' to add incomes data from form
+//Post API -defining the route for '/Myincomes' to add incomes data from form
 // Route to render the Myincomes template to add incomes
 app.post('/Myincomes',async(req,res)=>{
     // console.log(req.body)
@@ -232,9 +235,23 @@ app.post("/Updateincome/:id",async(req,res)=>{
 
 
 
-//Get API - defining the route for '/expenses'
+//Get API - defining the route for '/Myexpenses'
 app.get('/Myexpenses',async(req,res)=>{
     res.render("Myexpenses")
+})
+
+//Post API - defining the route for '/Myexpenses'
+app.post('/Myexpenses',async(req,res)=>{
+    
+    const {ExpenseCategory,Amount,Date,Remarks} = req.body;
+    
+    await expense.create({
+        ExpenseCategory,
+        Amount,
+        Date,
+        Remarks
+    })
+    res.redirect('/Myexpenses')
 })
 
 
