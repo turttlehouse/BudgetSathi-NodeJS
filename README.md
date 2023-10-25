@@ -42,13 +42,10 @@ To run BudgetSathi web application locally, please follow these steps:
 
 ## Features
 
-- User Registration and Authentication: BudgetSathi provides user registration and authentication functionality, ensuring the security and privacy of users                                          financial data.
-
-- Income and Expense Management: Users can easily add, update, and delete their income and expenses.
-
-- CRUD Functionality: The project includes CRUD (Create, Read, Update, Delete) functionality for both income and expense records.
-
-- User-Friendly Interface: The application features an intuitive & user-friendly interface, making it easy for users to navigate and manage their finances. 
+- User Registration and Authentication
+- Income and Expense Management
+- CRUD Functionality
+- User-Friendly Interface
 
 ## Key Feature
 
