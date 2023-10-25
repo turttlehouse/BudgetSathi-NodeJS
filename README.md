@@ -19,15 +19,19 @@ This project wouldn't have been the same without your support. I'm grateful for 
 
 To run BudgetSathi web application locally, please follow these steps:
 
-1. Install Node.js on your system. You can download it from here -(https://nodejs.org/en/download).
+1. Install Node.js on your system. You can download it from here - https://nodejs.org/en/download
 
-2. Clone this repository:
+2. Install XAMPP on your system. You can download XAMPP from here - https://www.apachefriends.org/index.html
+
+3. Create a MySQL Database: Open XAMPP and create a new MySQL database named "finance" to store your financial data.
+
+4. Clone this repository
    git clone https://github.com/turttlehouse/BudgetSathi-NodeJS.git
  
-3. Install the required Node.js packages:
+5. Install the required Node.js packages:
    npm install nodemon express bcryptjs ejs mysql2 sequelize ejs-mate
 
-4. Start the application:
+6. Start the application:
    npm start
    
 
