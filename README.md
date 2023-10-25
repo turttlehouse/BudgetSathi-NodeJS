@@ -35,6 +35,7 @@ To run BudgetSathi web application locally, please follow these steps:
 
 6. Start the application:
    npm start
+
    
 
 ##Technology used
