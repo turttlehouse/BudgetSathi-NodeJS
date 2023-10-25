@@ -1,4 +1,5 @@
 <h1 align="center">BudgetSathi - "Manage Money, Stress Less"</h1>
+<center>This text is centered in a GitHub README.</center>
 
 
 BudgetSathi is your financial companion, designed to empower you in managing your finances with ease.
