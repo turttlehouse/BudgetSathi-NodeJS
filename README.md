@@ -1,7 +1,5 @@
 <h1 align="center">BudgetSathi - "Manage Money, Stress Less"</h1>
 
-<p style="text-align: center;">This text is aligned to the center using inline CSS.</p>
-
 
 BudgetSathi is your financial companion, designed to empower you in managing your finances with ease.
 Take control of your income, expenses, and budgeting effortlessly, while enjoying the benefits of authentication and goal tracking for informed financial decisions 
