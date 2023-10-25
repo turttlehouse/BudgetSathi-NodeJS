@@ -1,4 +1,4 @@
-# BudgetSathi - "Manage Money, Stress Less"
+                                             # BudgetSathi - "Manage Money, Stress Less"
 
 BudgetSathi is your financial companion, designed to empower you in managing your finances with ease.
 Take control of your income, expenses, and budgeting effortlessly, while enjoying the benefits of authentication and goal tracking for informed financial decisions 
