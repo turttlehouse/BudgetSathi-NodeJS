@@ -30,8 +30,7 @@ To run BudgetSathi web application locally, please follow these steps:
 4. Clone this repository
    git clone https://github.com/turttlehouse/BudgetSathi-NodeJS.git
 
-5.Download CodeEditor you can download vscode from here - https://code.visualstudio.com/download
-    Note: Visual Studio Code is the recommended code editor, but you can use other code editors as well. 
+5.Download CodeEditor you can download vscode from here - https://code.visualstudio.com/download Note: Visual Studio Code is the recommended code editor, but you can use other code editors as well. 
 
 6. Install the required Node.js packages:
    npm install nodemon express bcryptjs ejs mysql2 sequelize ejs-mate
