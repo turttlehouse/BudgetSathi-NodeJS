@@ -11,7 +11,7 @@ where I had the privilege to participate in their 15-day Node.js Free Workshop. 
 and skills I acquired during the workshop.
 
 I'd also like to extend special thanks to my fellow mates @Tribhuvan prasad Chaudhary and @Rohan KumarChaudhary
-for their constant motivation throughout this project and valuable insights that led to successful completion of the project.
+for their constant motivation and valuable insights that led to successful completion of the project.
 
 This project wouldn't have been the same without your support. I'm grateful for having such inspiring friends by my side.
 
