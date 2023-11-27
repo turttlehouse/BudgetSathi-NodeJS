@@ -2,11 +2,12 @@ const dbConfig = require("../config/dbConfig");
 const { Sequelize, DataTypes } = require("sequelize");
 
 // la sequelize yo config haru lag ani database connect gardey vaneko hae 
+  // port:3306,  for local level production replace the below port with this port
+
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
   operatorsAliases: false,
-  // port:3306,
   port:38117,
   pool: {
     max: dbConfig.pool.max,
